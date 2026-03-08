@@ -1,4 +1,4 @@
-Questões de JAVASCRIPT:
+QUESTÕES DE JAVASCRIPT:
 
 Questão,Resposta
 1,C
@@ -8,4 +8,120 @@ Questão,Resposta
 5,C
 6,C
 7,B
-8: 
+
+08 - Função de somar números ímpares
+     function somaImpares(n) { //criação da função que vai receber um número qualquer
+          let soma = 0 // Cria a variável para somar os valores ímpares.
+
+          for (let i = 1; i <= n; i++) { //inicia o loop a partir do numero 1 e soma +1
+          if (i % 2 !==0) { //Verificação se o resultado da soma NÃO é par.
+                    soma += i; //se for impar soma o valor de i (que é impar) à variável enquanto ainda não for igual ou maior que N
+               }
+          }
+          return soma;
+     }
+     console.log(somaImpares(30));
+
+09 - Função de inverter palavras
+     function inverterPalavra(palavra) { //criação da função que recebe uma palavra qualquer
+          let palavraInvertida = ""; //Cria a variável vazia.
+
+          for (let i = palavra.length - 1; i >= 0; i--) { //inicia o loop a partir da ultima letra e subtrai 1 posição.
+               palavraInvertida += palavra[i]; //A cada iteração ele adiciona uma letra, que no caso vai ser a última da palavra 
+          }
+          return palavraInvertida;
+
+     }
+
+     console.log(inverterPalavra("JavaScript"));
+
+10 - a) 10
+     b) Erro: Divisão por zero não é permitida.
+     c) 7
+
+11 - Para percorrer e mapear um array json podemos usar alguns métodos como "map()", "forEach()", "for...of", "reduce()", "filter()", find() e o for tradicional que é o loop clássico.
+    O método "map" é usado para criar uma nova array JSON a partir da array original sem alterar a array original.
+     "map" é uma função de transformação de dados que retorna uma nova array de acordo com a função fornecida.
+     por exemplo: numa array [ nome: "joão", idade: 30; nome: "Maria", idade: 25]
+     a função array.map(pessoa => pessoa.nome) retornaria apenas a variável nome dentro da array, retornando ["joão", "Maria"].
+
+    O método "forEach" é usado para percorrer o array e executar a função para cada elemento.
+     exemplo:
+     na array [ nome: "joão", idade: 30; nome: "Maria", idade: 25]
+     a função array.forEach(pessoa => console,log(pessoa.nome)) printa apenas o nome de cada pessoa: "joão" e "Maria"
+     é uma espécie de loop que percorre cada elemento do array e executa a função.
+
+    O método "for...of" é usado para pegar cada elemento do array.
+     por exemplo: numa array [ nome: "joão", idade: 30; nome: "Maria", idade: 25]
+     a função for (const pessoa of array) {console.log(pessoa.nome)} ele vai pegar apenas os nomes de cada pessoa e printar: "joão" e "Maria".
+     nesse caso não é preciso controlar um contador, pode ser usado arrays, strings e outros objetos.
+
+12 - Variáveis são objetos que armazenam valores. podem ser de vários tipos como string, number, boolean, array, object, etc.
+     é como se fossem espaços na memória onde se guarda uma informação que pode ou não ser mutável.
+     exemplo: let nome = "João"; let é a função de declarar a variável, nome é o nome da variável e "João" é o valor armazenado na variável.
+     mas variáveis podem ser declarados de outras formas como const e var.
+     const numero = 10; declara uma variável constante que não pode ser alterada depois de declarada.
+     var idade = 24; declara uma variável que pode ser mudada, mas é um método mais antigo não se usa com frequencia mais.
+
+13 - Dentro de uma estrutura "if/else" é possível sim ter várias condições, inclusive outros "if/else".
+     por exemplo os operadores "&&" e "||" que podem ser usados para criar condições mais complexas.
+     o operador "&&" significa "E" ou seja, para que a condição seja True, todas as condições precisam ser verdadeiras.
+     exmeplo: if ( idade > 18 && temCarteira) { console.log("pode dirigir")} as duas condições precisam ser verdadeiras para que o resultado seja verdadeiro.
+     O operador "||" significa "OU", ou seja para que a condição seja True, pelo menos uma das condições precisa ser verdadera.
+     exemplo: if (idade >= 18 || temCarteira) { console.log("pode dirigir")}
+
+14 - a sintaxe do bloco "try" em javaScript é usada para tentar algo e lidar com os erros caso dê errado.
+     por exemplo: 
+     try { //vamos tentar uma divisão por zero.
+        let resultado = 10 / 0; // a divisão por zero gera um erro.
+        console.log(resultado);
+     } catch (error) { //caso dê erro ele é capturado nessa variável.
+        console.error("Ocorreu um erro: " + error.message); // caso dê um erro, essa mensagem será printada.
+     } 
+     O bloco try tenta executar um código, caso gere erro ele captura o erro e executa o bloco catch.
+
+15 - Em blocos de código onde é existe uma validação de resultado podemos usar o Throw como um método para lançar uma exceção ou para a validação.
+     é muito comum usar o Throw junto com os blocos try/catch, o cógido Try (tenta) executar uma função, caso dê errado ou a exceção seja cumprida o throw é usado, e o catch captura o valor de throw.
+     por exemplo: 
+     try {
+          function dividir(a, b) {
+               if (b === 0) { // se o valor do divisor for zero, a divisão dará erro, então o throw é usado para settar a exceção.
+                    throw new Error("Não se pode dividir por zero"); // aqui o código verificou se o numero divisor vai ser 0, se for é uma exceção que não pode ser aceita, usamos o throw para isso.
+               }
+               return a / b;  
+      }
+
+QUESTÕES DE SQL:
+
+1 - b) Select * . o Asterisco é usado para selecionar todas as colunas da tabela.
+
+2 - d) WHERE é utilizado para filtrar os resultador de acordo com uma condição.
+
+3 - a) ORDER BY . é utilizado para ordenar os resultados de acordo com uma coluna.
+
+4 - b) INSERT . normalmente utilizado junto com INTO para inserir os dados na tabela.
+
+5 - b) UPDATE . é utilizado para atualizar dados de acordo com o filtro utilizado. se não utilizar o filtro, todas as linhas são atualizadas.
+
+QUESTÕES DE INTEGRAÇÃO DE SISTEMAS:
+
+1 - a) 
+
+2 - c) API é um conjunto de regras e funções que permitem a comunicação entre sistemas.
+
+3 - c) Web Service é um serviço que conecta sistemas através da internet. 
+
+4 - c) Um token de acesso é uma chave de autenticação que permite o acesso a um recurso protegido.
+
+5 - d) webhook é um método de comunicação que permite que um sistema avise o outro sobre um evento específico.
+
+6 - c) JSON é um formato de dados leve e fácil de ler, por isso é tão utilizado para troca de dados.
+
+7 - a) HTTP 200 siginifica que deu tudo certo com a requisição.
+
+8 - b) Headers http são informações adicionais que são enviadas junto com a req/res HTTP.
+
+9 - d) <> delimita o início e o fim de uma tag em XML.
+
+10 - a) na integração síncrona o sistema depende da resposta para continuar o processo. na assíncrona o sistema pode continuar o processo e recebe a resposta posteriormente e continuar o processo normalmente.
+
