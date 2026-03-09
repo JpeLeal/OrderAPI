@@ -80,11 +80,18 @@ async function listOrders() { //Criação da função de listagem de pedidos.
 }
 
 async function deleteOrder(orderId) { //Criação da função de deletar pedidos no banco.
+    await pool.query(
+        `DELETE FROM Items
+         WHERE orderId = $1`,
+        [orderId]
+    );
+
     const result = await pool.query(
         `DELETE FROM "Order"
          WHERE orderId = $1`,
         [orderId]
     );
+
     return result.rowCount;
 }
 
@@ -112,7 +119,7 @@ async function updateOrder(orderId, body) { //Criação da função para atualiz
                 `INSERT INTO Items
                  (orderid, productid, quantity, price)
                  VALUES ( $1, $2, $3, $4)`,
-                [orderId, item.idItem, quantidadeItem, item.valorItem]
+                [orderId, item.idItem, item.quantidadeItem, item.valorItem]
             );
         }
 
