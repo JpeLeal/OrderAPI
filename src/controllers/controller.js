@@ -43,12 +43,11 @@ async function listOrders(req, res) { //Chamamento da função de listagem de pe
             erro: "Erro ao listar pedidos"
         });
     }
-
 }
 
 async function deleteOrder(req, res) { //Chamamento da função de deletar de pedidos lá do service.
     try {
-        const deletd = await orderService.deleteOrder(req.params.id);
+        const deleted = await orderService.deleteOrder(req.params.id);
 
         if (!deleted) {
             return res.status(404).json({

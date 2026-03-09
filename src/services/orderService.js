@@ -85,7 +85,7 @@ async function deleteOrder(orderId) { //Criação da função de deletar pedidos
          WHERE orderId = $1`,
         [orderId]
     );
-    return result.rowCount > 0;
+    return result.rowCount;
 }
 
 async function updateOrder(orderId, body) { //Criação da função para atualizar pedidos no banco.
@@ -97,20 +97,20 @@ async function updateOrder(orderId, body) { //Criação da função para atualiz
         await client.query(
             `UPDATE "Order"
              SET value = $1,
-             creationDate = $2
-             WHERE orderId = $3`,
+             creationdate = $2
+             WHERE orderid = $3`,
             [body.valorTotal, body.dataCriacao, orderId]
         );
 
         await client.query(
             `DELETE FROM Items
-             WHERE orderId = $1`,
+             WHERE orderid = $1`,
             [orderId]
         );
         for (const item of body.items) {
             await client.query(
                 `INSERT INTO Items
-                 (orderId, productId, quantity, price)
+                 (orderid, productid, quantity, price)
                  VALUES ( $1, $2, $3, $4)`,
                 [orderId, item.idItem, quantidadeItem, item.valorItem]
             );
