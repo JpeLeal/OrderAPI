@@ -1,6 +1,6 @@
 # OrderAPI
 
-API REST para gerenciamento de pedidos e itens, construída com Node.js, Express e PostgreSQL.
+API REST para gerenciamento de pedidos e itens, construï¿½da com Node.js, Express e PostgreSQL.
 
 ## Tecnologias
 - Node.js
@@ -25,12 +25,12 @@ OrderAPI/
       orderService.js
 ```
 
-## Pré-requisitos
+## Prï¿½-requisitos
 - Node.js 18+
 - PostgreSQL ativo
-- Tabelas `"Order"` e `Items` já criadas no banco
+- Tabelas `"Order"` e `Items` jï¿½ criadas no banco
 
-## Variáveis de ambiente
+## Variï¿½veis de ambiente
 Crie um arquivo `.env` na raiz de `OrderAPI/`:
 
 ```env
@@ -41,12 +41,12 @@ DB_PASSWORD=sua_senha
 DB_PORT=5432
 ```
 
-## Instalação
+## Instalaï¿½ï¿½o
 ```bash
 npm install
 ```
 
-## Execução
+## Execuï¿½ï¿½o
 ```bash
 npm run dev
 ```
@@ -80,8 +80,8 @@ Body esperado:
 ```
 
 Regras:
-- `valorTotal` deve ser igual à soma de `quantidadeItem * valorItem` de todos os itens.
-- Em inconsistência, retorna `400`.
+- `valorTotal` deve ser igual ï¿½ soma de `quantidadeItem * valorItem` de todos os itens.
+- Em inconsistï¿½ncia, retorna `400`.
 
 ### 2. Listar pedidos
 `GET /list`
@@ -92,7 +92,7 @@ Retorna pedidos ordenados por `creationDate` (mais recentes primeiro).
 `GET /:id`
 
 Retorna pedido com seus itens.
-- `404` se não encontrar.
+- `404` se nï¿½o encontrar.
 
 ### 4. Atualizar pedido
 `PUT /:id`
@@ -116,15 +116,14 @@ Body esperado (mesma estrutura do cadastro, exceto `numeroPedido`, pois o ID vem
 `DELETE /:id`
 
 Remove itens e pedido.
-- `404` se pedido não existir.
+- `404` se pedido nï¿½o existir.
 
 ## Fluxo interno
 - `routes` define as rotas HTTP.
-- `controller` recebe requisições/respostas.
-- `service` contém regras de negócio e consultas SQL.
-- `dbConfig` cria pool de conexão PostgreSQL e testa conexão ao iniciar.
+- `controller` recebe requisiï¿½ï¿½es/respostas.
+- `service` contï¿½m regras de negï¿½cio e consultas SQL.
+- `dbConfig` cria pool de conexï¿½o PostgreSQL e testa conexï¿½o ao iniciar.
 
-## Observações
-- O projeto possui dependência `jest`, mas ainda não há script de teste em `package.json`.
+## Observaï¿½ï¿½es
 - O servidor usa porta fixa (`3000`) em `server.js`.
-- A criação e atualização de pedido usam transação (`BEGIN/COMMIT/ROLLBACK`) para manter consistência.
+- A criaï¿½ï¿½o e atualizaï¿½ï¿½o de pedido usam transaï¿½ï¿½o (`BEGIN/COMMIT/ROLLBACK`) para manter consistï¿½ncia.
